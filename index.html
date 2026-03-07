@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>España Vaciada - Empleo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body style="background-color: #c9ada7;"> 
+    
+    <header class="header-image text-white d-flex align-items-start p-5" style="background-image: url('assets/Fondo_Header.png'); height: 400px; background-size: cover; background-position: center;">
+        <h1 class="display-3 fw-bold">SITE NAME</h1>
+    </header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3"> <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-4 text-uppercase fw-semibold"> <li class="nav-item"><a class="nav-link active fs-5" href="index.html">Anuncios</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="gestion-ofertas.html">Ofertas y demandas</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="registro.html">Registrarse</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="login.html">Login</a></li>
+                <li class="nav-item d-flex align-items-center">
+                    <span class="nav-link text-warning fs-5 border border-warning rounded px-3" id="user-display">
+                        -Usuario-
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <main class="container my-5 p-4 bg-white bg-opacity-25 rounded-4 shadow-sm">
+        <h2 class="text-center text-white mb-4 text-uppercase fw-bold">Nuevas Ofertas</h2>
+        
+        <div class="row g-4" id="contenedor-anuncios">
+            </div>
+    </main>
+
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Otros</h5>
+                    <p>Otros 1</p>
+                    <p>Otros 2</p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Contactar</h5>
+                    <p>Tlf. ficticio</p>
+                    <p>Email ficticio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/model.js"></script>
+    <script type="module" src="js/view.js"></script>
+    <script type="module" src="js/controller.js"></script>
+</body>
+</html>
