@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nombre: document.getElementById('reg-nombre').value,
                 email: document.getElementById('reg-email').value,
                 password: document.getElementById('reg-pass').value,
-                rol: 'candidato'
+                rol: document.getElementById('reg-rol').value
             };
 
             // Añadimos al Modelo (memoria)
