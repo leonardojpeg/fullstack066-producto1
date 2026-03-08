@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SiteName - Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="background-color: #d1bba7;"> 
+
+    <header class="header-image text-white d-flex align-items-start p-5" style="background-image: url('assets/Fondo_Header.png'); height: 400px; background-size: cover; background-position: center;">
+        <h1 class="display-3 fw-bold">SITE NAME</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3"> 
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-4 text-uppercase fw-semibold"> 
+                    <li class="nav-item"><a class="nav-link fs-5" href="index.html">Anuncios</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="gestion-ofertas-demandas.html">Ofertas y demandas</a></li>
+                    <li class="nav-item"><a class="nav-link active fs-5" href="registro.html">Registrarse</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="login.html">Login</a></li>
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="nav-link text-warning fs-5 border border-warning rounded px-3" id="user-display">
+                            -Usuario-
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container my-5">
+        <div class="row g-5">
+            <div class="col-md-5">
+                <div class="secondary-container p-4 shadow-lg text-white" 
+                     style="background-color: #3b7459; border-radius: 30px;">
+                    <h3 class="text-center fw-bold mb-4">NUEVO USUARIO</h3>
+                    <form id="form-registro">
+                        <div class="mb-3">
+                            <label class="fw-bold">Nombre:</label>
+                            <input type="text" id="reg-nombre" class="form-control border-0 bg-light-subtle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="fw-bold">Email:</label>
+                            <input type="email" id="reg-email" class="form-control border-0 bg-light-subtle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="fw-bold">Contraseña:</label>
+                            <input type="password" id="reg-pass" class="form-control border-0 bg-light-subtle" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="fw-bold">Tipo de usuario:</label>
+                            <select id="reg-rol" class="form-select border-0 bg-light-subtle" required>
+                                <option value="" selected disabled>Selecciona una opción</option>
+                                <option value="candidato">Candidato</option>
+                                <option value="empresa">Empresa</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn-principal btn px-5 py-2 fw-bold text-white shadow-sm" style="border-radius: 10px; border: none;">
+                                Registrarse
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="main-container p-4 shadow-sm rounded-4">
+                    <h3 class="text-black fw-bold mb-4 text-uppercase">Gestión de Usuarios</h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Rol</th>
+                                    <th class="text-center">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-usuarios-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Otros</h5>
+                    <p>Otros 1</p>
+                    <p>Otros 2</p>
+                </div>
+                <div class="col-md-5 mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Contactar</h5>
+                    <p>Tlf. ficticio</p>
+                    <p>Email ficticio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/controller.js"></script>
+</body>
+</html>

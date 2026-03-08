@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SiteName - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="background-color: #d1bba7;"> 
+
+    <header class="header-image text-white d-flex align-items-start p-5" style="background-image: url('assets/Fondo_Header.png'); height: 400px; background-size: cover; background-position: center;">
+        <h1 class="display-3 fw-bold">SITE NAME</h1>
+    </header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3"> <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-4 text-uppercase fw-semibold"> 
+                <li class="nav-item"><a class="nav-link fs-5" href="index.html">Anuncios</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="gestion-ofertas-demandas.html">Ofertas y demandas</a></li>
+                <li class="nav-item"><a class="nav-link fs-5" href="registro.html">Registrarse</a></li>
+                <li class="nav-item"><a class="nav-link active fs-5" href="login.html">Login</a></li>
+                <li class="nav-item d-flex align-items-center">
+                    <span class="nav-link text-warning fs-5 border border-warning rounded px-3" id="user-display">
+                        -Usuario-
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">    
+        <div class="secondary-container p-5 shadow-lg text-white" 
+             style="border-radius: 40px; width: 100%; max-width: 600px;">
+            
+            <h2 class="text-center fw-bold mb-5" style="letter-spacing: 2px;">INICIAR SESIÓN</h2>
+
+            <form id="form-login">
+                <div class="row mb-4 align-items-center">
+                    <label class="col-sm-4 col-form-label fw-bold h5">Email:</label>
+                    <div class="col-sm-8">
+                        <input type="email" id="login-email" class="form-control form-control-lg border-0 bg-light-subtle" required>
+                    </div>
+                </div>
+
+                <div class="row mb-5 align-items-center">
+                    <label class="col-sm-4 col-form-label fw-bold h5">Contraseña:</label>
+                    <div class="col-sm-8">
+                        <input type="password" id="login-pass" class="form-control form-control-lg border-0 bg-light-subtle" required>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn-principal btn btn-lg px-5 py-2 fw-bold text-white shadow-sm" 
+                            style="border-radius: 10px; border: none;">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Otros</h5>
+                    <p>Otros 1</p>
+                    <p>Otros 2</p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Contactar</h5>
+                    <p>Tlf. ficticio</p>
+                    <p>Email ficticio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/controller.js"></script>
+</body>
+</html>
