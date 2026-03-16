@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savia Nueva - Gestión de Ofertas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="body"> 
+
+    <header class="header-image text-white d-flex align-items-start p-5" 
+            style="background-image: url('assets/Fondo_Header.png'); height: 400px; background-size: cover; background-position: center;">
+        <h1 class="display-3 fw-bold" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">SAVIA NUEVA</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container-fluid">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-4 text-uppercase fw-semibold pt-3 pt-lg-0"> 
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="index.html">Anuncios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5" href="gestion-ofertas-demandas.html">Ofertas y demandas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="registro.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center mt-3 mt-lg-0"> 
+                        <span class="nav-link text-warning fs-5 border border-warning rounded px-3" id="user-display">
+                        -Usuario-
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="text-center text-black mb-5 fw-bold text-uppercase" style="letter-spacing: 2px;">Gestión de ofertas y demandas</h2>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+                <div class="secondary-container p-4 shadow-lg text-white">
+                    <h3 class="text-center fw-bold mb-4">Publicar nueva oferta</h3>
+                    
+                    <form id="form-anuncio">
+                        <div class="row mb-3 align-items-center">
+                            <label class="col-sm-3 fw-bold">Título:</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="anu-titulo" class="form-control bg-light border-0 shadow-sm" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 align-items-center">
+                            <label class="col-sm-3 fw-bold">Tipo:</label>
+                            <div class="col-sm-9">
+                                <select id="anu-tipo" class="form-select bg-light border-0 shadow-sm">
+                                    <option value="oferta">Oferta (Busco trabajador)</option>
+                                    <option value="demanda">Demanda (Busco empleo)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="fw-bold d-block text-center mb-2">Descripción:</label>
+                            <textarea id="anu-desc" class="form-control bg-light border-0 shadow-sm" rows="4" required></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn-principal btn px-5 py-2 fw-bold text-white shadow-sm" 
+                                    style="border-radius: 10px; border: none; background-color: #8a7cff;">
+                                Publicar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="bg-light bg-opacity-75 p-5 rounded-4 shadow-sm">
+                    <h3 class="text-center text-black fw-bold mb-4 text-uppercase">Consultas y borrado</h3>
+            
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 bg-white">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Fecha</th>
+                                    <th>Tipo</th>
+                                    <th class="text-center">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-anuncios-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Otros</h5>
+                    <p>Otros 1</p>
+                    <p>Otros 2</p>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold">Contactar</h5>
+                    <p>Tlf. ficticio</p>
+                    <p>Email ficticio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/controller.js"></script>
+</body>
+</html>

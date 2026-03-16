@@ -1,3 +1,5 @@
+"use strict";
+
 import { anuncios, usuarios } from './model.js';
 import { view } from './view.js';
 
@@ -6,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. LÓGICA DEL DASHBOARD (index.html) ---
     // Solo se ejecuta si existe el contenedor de anuncios
-    if (document.getElementById('contenedor-anuncios')) {
+    const contenedorAnuncios = document.getElementById('contenedor-anuncios');
+    if (contenedorAnuncios) {
         view.renderizarDashboard(anuncios);
     }
 
@@ -53,7 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const user = usuarios.find(u => u.email === email && u.password === pass);
 
             if (user) {
+                //Guardamos el valor email del usuario como item 'usuarioActivo' del sessionStorage
                 sessionStorage.setItem('usuarioActivo', user.email);
+                //Devolvemos a la pagina "index.html"
                 window.location.href = 'index.html';
             } else {
                 alert('Email o contraseña incorrectos.');
@@ -67,9 +72,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sesion && userDisplay) {
         userDisplay.textContent = sesion;
     }
+
+    // --- 6. LÓGICA DE GESTIÓN DE ANUNCIOS (gestion-ofertas-demandas.html) ---
+    const tablaAnuncios = document.getElementById('tabla-anuncios-body');
+    if (tablaAnuncios) {
+        view.renderizarTablaGestionAnuncios(anuncios);
+    }
+
+    const formAnuncio = document.getElementById('form-anuncio');
+    if (formAnuncio) {
+        formAnuncio.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const sesionActual = sessionStorage.getItem('usuarioActivo') || 'Anónimo';
+
+            const nuevoAnuncio = {
+                id: Date.now(), // Genera un ID único basado en el tiempo
+                tipo: document.getElementById('anu-tipo').value,
+                titulo: document.getElementById('anu-titulo').value,
+                fecha: new Date().toLocaleDateString('es-ES'),
+                usuario: sesionActual,
+                desc: document.getElementById('anu-desc').value
+            };
+
+            anuncios.push(nuevoAnuncio);
+            view.renderizarTablaGestionAnuncios(anuncios);
+            formAnuncio.reset();
+            alert('¡Anuncio publicado en Savia Nueva!');
+        });
+    }
 });
 
-// --- 6. FUNCIÓN GLOBAL DE BORRADO ---
+// --- 7. FUNCIÓN GLOBAL DE BORRADO ---
 // La sacamos al objeto window para que el onclick del HTML la vea
 window.borrarUsuario = (email) => {
     const index = usuarios.findIndex(u => u.email === email);
@@ -77,6 +111,17 @@ window.borrarUsuario = (email) => {
         if(confirm(`¿Seguro que quieres borrar a ${email}?`)) {
             usuarios.splice(index, 1);
             view.renderizarTablaUsuarios(usuarios);
+        }
+    }
+};
+
+// 8. Borrar Anuncio (Gestión)
+window.borrarAnuncio = (id) => {
+    const index = anuncios.findIndex(a => a.id === id);
+    if (index !== -1) {
+        if(confirm('¿Eliminar esta publicación?')) {
+            anuncios.splice(index, 1);
+            view.renderizarTablaGestionAnuncios(anuncios);
         }
     }
 };

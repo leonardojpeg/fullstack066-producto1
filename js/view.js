@@ -46,7 +46,8 @@ export const view = {
                 <tr class="align-middle text-black">
                     <td>${user.nombre}</td>
                     <td>${user.email}</td>
-                    <td class="text-capitalize">${user.rol}</td> <td class="text-end">
+                    <td class="text-capitalize">${user.rol}</td> 
+                    <td class="text-center">
                         <button class="btn btn-danger btn-sm px-4" onclick="borrarUsuario('${user.email}')">
                             Borrar
                         </button>
@@ -55,8 +56,29 @@ export const view = {
             `;
             tabla.innerHTML += fila;
         });
+    },
+
+    // 3. RENDERIZAR TABLA DE ANUNCIOS (gestion-ofertas-demandas.html)
+    renderizarTablaGestionAnuncios: (listaAnuncios) => {
+        const tabla = document.getElementById('tabla-anuncios-body');
+        if (!tabla) return;
+
+        tabla.innerHTML = ''; 
+        listaAnuncios.forEach(anuncio => {
+            const fila = `
+                <tr class="align-middle text-black">
+                    <td class="fw-bold">${anuncio.titulo}</td>
+                    <td>${anuncio.fecha}</td>
+                    <td class="text-capitalize">${anuncio.tipo}</td>
+                    <td class="text-center">
+                        <button class="btn btn-danger btn-sm px-4 fw-bold" onclick="borrarAnuncio(${anuncio.id})">
+                            Borrar
+                        </button>
+                    </td>
+                </tr>
+            `;
+            tabla.innerHTML += fila;
+        });
     }
-
-
 
 };
