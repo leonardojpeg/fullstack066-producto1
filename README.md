@@ -11,7 +11,7 @@ Este proyecto ha sido desarrollado como parte del módulo **Desarrollo Full Stac
 Puedes probar la aplicación en el siguiente enlace:
 
 CodeSandbox  
-https://codesandbox.io/p/sandbox/github/leonardojpeg/fullstack066/tree/Jordi-techconnect?file=%2Findex.html%3A10%2C8
+https://codesandbox.io/p/sandbox/github/leonardojpeg/fullstack066/tree/JordiTechconnect-Producto1
 
 ---
 
