@@ -2,14 +2,44 @@
     background-color: #c9ada7;
 }
 
-/* LANDPAGE - DASHBOARD */
+.header-image{
+    background-image: url('../assets/Fondo_Header.png'); 
+    height: 400px; 
+    background-size: cover; 
+    background-position: center;
+}
 
+/* LANDPAGE - DASHBOARD */
 .navbar-nav .nav-link {
     font-size: 1.2rem !important; 
     letter-spacing: 1px;
 }
 
 /* Estilo para las tarjetas de la landing*/
+.counter-oferta{
+    background-color: #3b7459;
+}
+
+.counter-demanda{
+    background-color: #405ca7;
+}
+
+.counter-usuarios{
+    background-color: #444444;
+}
+
+.card-mis-ofertas{
+    background-color: rgba(236, 236, 236, 0.521);
+}
+.counter-oferta, .counter-demanda, .counter-usuarios, .card-mis-ofertas{
+    transition: transform 0.2s ease !important;
+}
+
+.counter-oferta:hover, .counter-demanda:hover, .counter-usuarios:hover{
+    transform: translateY(-5px);
+    cursor: pointer !important;
+}
+
 .card-oferta {
     background-color: #3b7459; /* Color verde para ofertas */
     color: white;
@@ -20,7 +50,7 @@
 }
 
 .card-demanda {
-    background-color: #3c7977; /* Un verde-azulado distinto para demandas, como pide el enunciado */
+    background-color: #405ca7; /* Un verde-azulado distinto para demandas, como pide el enunciado */
     color: white;
     border-radius: 20px;
     border: 2px solid white !important;
@@ -28,15 +58,16 @@
     transition: transform 0.2s ease, box-shadow 0.4s ease !important;
 }
 
-.card-oferta:hover, .card-demanda:hover {
+.card-oferta:hover, .card-demanda:hover, .card-mis-ofertas:hover {
     transform: translateY(-5px);
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6), inset -7px 0 7px 0 white !important;
+    cursor: pointer !important;
 }
 
 /* El contenedor de las ofertas */
 .main-container {
     background-color: rgba(255, 255, 255, 0.2); 
-    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .secondary-container {
@@ -55,9 +86,11 @@
 .btn-principal:hover {
     background-color: #3c27f7 !important;
     transform: scale(1.1);
+    cursor: pointer !important;
 }
 
 /* Efecto hover general para botones de borrar */
 .btn-danger:hover {
     transform: scale(1.1);
+    cursor: pointer !important;
 }

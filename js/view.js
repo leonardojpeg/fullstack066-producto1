@@ -60,25 +60,59 @@ export const view = {
 
     // 3. RENDERIZAR TABLA DE ANUNCIOS (gestion-ofertas-demandas.html)
     renderizarTablaGestionAnuncios: (listaAnuncios) => {
-        const tabla = document.getElementById('tabla-anuncios-body');
-        if (!tabla) return;
+        const contenedor = document.getElementById('contenedor-gestion-anuncios');
+        if (!contenedor) return;
 
-        tabla.innerHTML = ''; 
+        contenedor.innerHTML = ''; 
+
+        // Si no hay anuncios, mostramos un mensaje amistoso
+        if (listaAnuncios.length === 0) {
+            contenedor.innerHTML = `<div class="col-12 text-black-50 fs-5 my-5">Aún no has publicado ningún anuncio.</div>`;
+            return;
+        }
+
         listaAnuncios.forEach(anuncio => {
-            const fila = `
-                <tr class="align-middle text-black">
-                    <td class="fw-bold">${anuncio.titulo}</td>
-                    <td>${anuncio.fecha}</td>
-                    <td class="text-capitalize">${anuncio.tipo}</td>
-                    <td class="text-center">
-                        <button class="btn btn-danger btn-sm px-4 fw-bold" onclick="borrarAnuncio(${anuncio.id})">
-                            Borrar
-                        </button>
-                    </td>
-                </tr>
+            // Lógica para elegir el color del borde según el tipo
+            const esOferta = anuncio.tipo.toLowerCase() === 'oferta';
+            const colorBorde = esOferta ? 'border-success' : 'border-primary';
+            const textoTipo = esOferta ? 'Busco Trabajador' : 'Busco Empleo';
+
+            const tarjetaHtml = `
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-mis-ofertas h-100 shadow-sm border-2 ${colorBorde}" style="border-radius: 20px;">
+                        <div class="card-body d-flex flex-column text-start">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold text-black mb-0">${anuncio.titulo}</h5>
+                                <span class="badge text-uppercase ${esOferta ? 'bg-success text-white' : 'bg-primary'} fw-bold" style="font-size: 0.75rem;">
+                                    ${textoTipo}
+                                </span>
+                            </div>
+                            
+                            <p class="text-muted small mb-3">Publicado el: ${anuncio.fecha}</p>
+                            <p class="card-text text-dark flex-grow-1">${anuncio.desc || 'Sin descripción.'}</p>
+                            
+                            <div class="d-flex justify-content-end mt-3 pt-3 border-top border-light">
+                                <button class="btn btn-danger btn-sm px-4 fw-bold shadow-sm" style="border-radius: 8px;" onclick="borrarAnuncio(${anuncio.id})">
+                                    <i class="bi bi-trash"></i> Borrar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             `;
-            tabla.innerHTML += fila;
+            contenedor.innerHTML += tarjetaHtml;
         });
-    }
+    },
+
+    // 4. CALCULAR CANTIDADES TARJETAS RESUMEN DASHBOARD (index.html)
+    actualizarEstadisticas: (numOfertas, numDemandas, numUsuarios) => {
+        const o = document.getElementById('total-ofertas');
+        const d = document.getElementById('total-demandas');
+        const u = document.getElementById('total-usuarios');
+        
+        if (o) o.textContent = numOfertas;
+        if (d) d.textContent = numDemandas;
+        if (u) u.textContent = numUsuarios;
+    },
 
 };

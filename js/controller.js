@@ -10,11 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Solo se ejecuta si existe el contenedor de anuncios
     const contenedorAnuncios = document.getElementById('contenedor-anuncios');
     if (contenedorAnuncios) {
+        const numOfertas = anuncios.filter(a => a.tipo === 'oferta').length;
+        const numDemandas = anuncios.filter(a => a.tipo === 'demanda').length;
+        const numUsuarios = usuarios.length;
+
+        // Actualizamos los contadores y las tarjetas
+        view.actualizarEstadisticas(numOfertas, numDemandas, numUsuarios);
         view.renderizarDashboard(anuncios);
     }
 
 
-
+    
     // --- 2. LÓGICA DE GESTIÓN DE USUARIOS (registro.html) ---
     const tablaUsuarios = document.getElementById('tabla-usuarios-body');
     if (tablaUsuarios) {
@@ -74,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 6. LÓGICA DE GESTIÓN DE ANUNCIOS (gestion-ofertas-demandas.html) ---
-    const tablaAnuncios = document.getElementById('tabla-anuncios-body');
+    const tablaAnuncios = document.getElementById('contenedor-gestion-anuncios');
     if (tablaAnuncios) {
         view.renderizarTablaGestionAnuncios(anuncios);
     }
@@ -115,7 +121,7 @@ window.borrarUsuario = (email) => {
     }
 };
 
-// 8. Borrar Anuncio (Gestión)
+// 8. BORRAR ANUNCIO (Gestión)
 window.borrarAnuncio = (id) => {
     const index = anuncios.findIndex(a => a.id === id);
     if (index !== -1) {
