@@ -9,6 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<!-- Prompts IA (Gemini) 
+
+1- Los form-control de bootstrap tenían una opción para diferentes tamaños, ¿cuales hay?
+Respuesta: form-control-lg, form-control-sm
+
+2. No consigo alinear los labels y los inputs del formulario, quedan raros de esta manera (se adjunta captura de pantalla y codigo del label e input del email). ¿Cómo los puedo ajustar?
+Respuesta: Utiliza col-sm-4 en los labels y col-sm-8 en los inputs
+
+3. Se podía evitar crear una lógica js para la validación de los formularios en el propio HTML, ¿cómo funciona?
+Respuesta: required
+
+4. ¿Hay alguna clase en bootstrap para que los inputs tengan un sombreado interior suave?
+Respuesta: bg-light-subtle
+
+-->
 <body class="body"> 
 
     <header class="header-image text-white d-flex align-items-start p-5">
@@ -45,7 +60,7 @@
         </div>
     </nav>
     
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">    
+    <div class="container-login container d-flex justify-content-center align-items-center">    
         <div class="secondary-container p-5 shadow-lg text-white">
             
             <h2 class="head-secondary text-center fw-bold mb-5">INICIAR SESIÓN</h2>
@@ -54,14 +69,14 @@
                 <div class="row mb-4 align-items-center">
                     <label class="col-sm-4 col-form-label fw-bold h5">Email:</label>
                     <div class="col-sm-8">
-                        <input type="email" id="login-email" class="form-control form-control-lg border-0 bg-light-subtle" required>
+                        <input type="email" id="login-email" class="form-control form-control-lg border-0 bg-light-subtle" placeholder="Dirección de email" required>
                     </div>
                 </div>
 
                 <div class="row mb-5 align-items-center">
                     <label class="col-sm-4 col-form-label fw-bold h5">Contraseña:</label>
                     <div class="col-sm-8">
-                        <input type="password" id="login-pass" class="form-control form-control-lg border-0 bg-light-subtle" required>
+                        <input type="password" id="login-pass" class="form-control form-control-lg border-0 bg-light-subtle" placeholder="Contraseña" required>
                     </div>
                 </div>
 
@@ -79,18 +94,20 @@
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
-                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
-                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                    <!-- href vacíos, devuelven arriba a la misma pagina -->
+                    <p><a href="#" class="text-white text-decoration-none">No nos hacemos responsables</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">de los daños producidos en su vista</a></p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Otros</h5>
-                    <p class="text-center">Otros 1</p>
-                    <p class="text-center">Otros 2</p>
+                    <!-- href vacíos, devuelven arriba a la misma pagina -->
+                    <p class="text-center"><a href="#" class="text-white text-decoration-none">Sugerencias</a></p>
+                    <p class="text-center"><a href="#" class="text-white text-decoration-none">Click vacío</a></p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Contactar</h5>
-                    <p class="text-center">Tlf. ficticio</p>
-                    <p class="text-center">Email ficticio</p>
+                    <p class="text-center">Tlf: 91 123 45 67</p>
+                    <p class="text-center">Email: nomeenvies@nada.com</p>
                 </div>
             </div>
         </div>

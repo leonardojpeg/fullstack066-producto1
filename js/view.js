@@ -1,11 +1,22 @@
+/* Prompts IA (Gemini)
+
+1. Quiero comprobar en el caso de esta lista, si no hay ningún anuncio publicado para printear un mensaje de "No tienes anuncios". ¿Que se te ocurre? (Se adjunta la función renderizarTablaGestionAnuncios)
+Respuesta: if (listaAnuncios.length === 0) ... soy bobo... 
+
+2. Al eliminar un usuario, se me duplica la tabla (se adjunta el código de la función renderizarTablaUsuarios y de la función de borrado del controller.js)
+Respuesta: Uso del tabla.innerHTML = ''; (limpieza de datos) antes de empezar el bucle forEach. Se aplica a TODOS los bucles.
+
+*/
+
+
 export const view = {
 
     // 1. RENDERIZAR DASHBOARD (index.html)
     renderizarDashboard: (listaAnuncios) => {
-        const contenedor = document.getElementById('contenedor-anuncios');
-        if (!contenedor) return; // Seguridad: si no existe el div, no ejecuta
+        const contenedorDash = document.getElementById('contenedor-anuncios');
+        if (!contenedorDash) return; // Seguridad: si no existe el div, no ejecuta
 
-        contenedor.innerHTML = ''; // Limpiamos antes de pintar
+        contenedorDash.innerHTML = ''; // Limpiamos antes de pintar
 
         listaAnuncios.forEach(anuncio => {
             // Diferenciamos color según el tipo
@@ -30,11 +41,11 @@ export const view = {
                     </div>
                 </div>
             `;
-            contenedor.innerHTML += cardHTML;
+            contenedorDash.innerHTML += cardHTML;
         });
     },
 
-    // 2. RENDERIZAR TABLA DE USUARIOS (registro.html / gestion-ofertas-demandas.html)
+    // 2. RENDERIZAR TABLA DE USUARIOS (registro.html)
     renderizarTablaUsuarios: (listaUsuarios) => {
         const tabla = document.getElementById('tabla-usuarios-body');
         if (!tabla) return;
@@ -45,7 +56,7 @@ export const view = {
             const fila = `
                 <tr class="align-middle text-black">
                     <td>${user.nombre}</td>
-                    <td>${user.email}</td>
+                    <td class="d-none d-md-table-cell">${user.email}</td>
                     <td class="text-capitalize">${user.rol}</td> 
                     <td class="text-center">
                         <button class="btn btn-danger btn-sm px-4" onclick="borrarUsuario('${user.email}')">
@@ -65,7 +76,7 @@ export const view = {
 
         contenedor.innerHTML = ''; 
 
-        // Si no hay anuncios, mostramos un mensaje amistoso
+        // Si no hay anuncios, mostramos un mensaje
         if (listaAnuncios.length === 0) {
             contenedor.innerHTML = `<div class="col-12 text-black-50 fs-5 my-5">Aún no has publicado ningún anuncio.</div>`;
             return;
@@ -104,7 +115,7 @@ export const view = {
         });
     },
 
-    // 4. CALCULAR CANTIDADES TARJETAS RESUMEN DASHBOARD (index.html)
+    // 4. INTRODUCIR CANTIDADES TARJETAS RESUMEN DASHBOARD (index.html)
     actualizarEstadisticas: (numOfertas, numDemandas, numUsuarios) => {
         const o = document.getElementById('total-ofertas');
         const d = document.getElementById('total-demandas');

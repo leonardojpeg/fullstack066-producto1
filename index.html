@@ -13,6 +13,21 @@
     <!-- Hoja de estilos -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<!-- Prompts IA (Gemini) 
+
+1- ¿Hay alguna clase de bootstrap para hacer sticky el navbar cuando se hace scroll-down?
+Respuesta: sticky-top
+
+2- Según este código (collapse), el navbar debería hacerse tipo móvil (tres rayas horizontales y menú desplegable) al reducir el ancho de pantalla, pero no lo hace (adjunto index.html):
+Respuesta: Falta importar librería de scripts de Bootstrap.  
+
+3. ¿Como era la clase para las sombras finas de bootstrap?
+Respuesta: shadow-sm
+
+4. ¿Cómo funcionaba el sistema de columnas responsive de bootstrap?
+Respuesta: col-md-"num de columnas a utilizar sobre 12" (Hace la explicación completa)
+
+-->
 <body class="body"> 
     
     <header class="header-image text-white d-flex align-items-start p-5">
@@ -73,7 +88,6 @@
         </div>
         
         <h2 class="text-center text-black mb-4 text-uppercase fw-bold">Ofertas y demandas</h2>
-        
         <div class="row g-4" id="contenedor-anuncios"></div>
     </main>
 
@@ -82,18 +96,20 @@
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
-                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
-                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                    <!-- href vacíos, devuelven arriba a la misma pagina -->
+                    <p><a href="#" class="text-white text-decoration-none">No nos hacemos responsables</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">de los daños producidos en su vista</a></p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Otros</h5>
-                    <p class="text-center">Otros 1</p>
-                    <p class="text-center">Otros 2</p>
+                    <!-- href vacíos, devuelven arriba a la misma pagina -->
+                    <p class="text-center"><a href="#" class="text-white text-decoration-none">Sugerencias</a></p>
+                    <p class="text-center"><a href="#" class="text-white text-decoration-none">Click vacío</a></p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Contactar</h5>
-                    <p class="text-center">Tlf. ficticio</p>
-                    <p class="text-center">Email ficticio</p>
+                    <p class="text-center">Tlf: 91 123 45 67</p>
+                    <p class="text-center">Email: nomeenvies@nada.com</p>
                 </div>
             </div>
         </div>

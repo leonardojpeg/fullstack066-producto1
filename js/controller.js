@@ -1,3 +1,19 @@
+/* Prompts IA (Gemini)
+
+1. Entiendo que si importo aquí model.js y view.js, no hace falta importarlas de nuevo en cada html, con importar solo controller.js, ya lleva las otras dos ¿no?
+Respuesta: Si
+
+2. Al introducir los datos del formulario de registro la pagina se actualiza automáticamente, quiero que se renderice de nuevo la tabla pero no se recargue la pagina, ¿se puede evitar?
+Respuesta: Explica el uso de preventDefault();
+
+3. ¿Hay alguna manera de hacer que aunque se recargue la pagina, el usuario se mantenga en el elemento id="user-display" del navbar? (Se adjunta la lógica de login)
+Respuesta: Explica el funcionamiento del sessionStorage y propone usar la función find() para buscar el usuario
+
+4. ¿Cómo puedo aplicar una función al hacer click a un boton del HTML?
+Respuesta: aplicarlo al objeto "window", p.ej: window.borrarUsuario
+
+*/
+
 "use strict";
 
 import { anuncios, usuarios } from './model.js';
@@ -40,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rol: document.getElementById('reg-rol').value
             };
 
-            // Añadimos al Modelo (memoria)
+            // Añadimos al Modelo (memoria temporal, se pierde al actualizar)
             usuarios.push(nuevoUsuario);
 
             // Actualizamos la Vista
@@ -72,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 5. ACTUALIZAR NAVBAR (En todas las páginas) para que aparezca el usuario al hacer login ---
+    // --- 5. ACTUALIZAR NAVBAR para que aparezca el usuario al hacer login ---
     const userDisplay = document.getElementById('user-display');
     const sesion = sessionStorage.getItem('usuarioActivo');
     if (sesion && userDisplay) {

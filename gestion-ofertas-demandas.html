@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<!-- Prompts IA (Gemini)
+
+1. El textarea ha quedado muy pequeño, quiero hacerlo más alto (se adjunta codigo y captura del textarea de "Descripcion")
+Respuesta: Explica el uso de rows, se implementa rows="4"
+
+-->
 <body class="body"> 
 
     <header class="header-image text-white d-flex align-items-start p-5">
@@ -58,14 +64,14 @@
                         <div class="row mb-3 align-items-center">
                             <label class="col-sm-3 fw-bold">Título:</label>
                             <div class="col-sm-9">
-                                <input type="text" id="anu-titulo" class="form-control bg-light border-0 shadow-sm" required>
+                                <input type="text" id="anu-titulo" class="form-control bg-light border-0 shadow-sm" placeholder="Titulo del anuncio" required>
                             </div>
                         </div>
 
                         <div class="row mb-3 align-items-center">
                             <label class="col-sm-3 fw-bold">Tipo:</label>
                             <div class="col-sm-9">
-                                <select id="anu-tipo" class="form-select bg-light border-0 shadow-sm">
+                                <select id="anu-tipo" class="form-select bg-light border-0 shadow-sm" required>
                                     <option value="" selected disabled>Selecciona una opción</option>
                                     <option value="oferta">Oferta (Busco trabajador)</option>
                                     <option value="demanda">Demanda (Busco empleo)</option>
@@ -75,7 +81,7 @@
 
                         <div class="mb-4">
                             <label class="fw-bold d-block text-center mb-2">Descripción:</label>
-                            <textarea id="anu-desc" class="form-control bg-light border-0 shadow-sm" rows="4" required></textarea>
+                            <textarea id="anu-desc" class="form-control bg-light border-0 shadow-sm" rows="4" placeholder="Descripcion del anuncio" required></textarea>
                         </div>
 
                         <div class="d-flex justify-content-center">
@@ -103,18 +109,20 @@
             <div class="row text-center text-md-start">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Datos Legales</h5>
-                    <p><a href="#" class="text-white text-decoration-none">Enlace 1</a></p>
-                    <p><a href="#" class="text-white text-decoration-none">Enlace 2</a></p>
+                    <!-- href vacíos, devuelven arriba a la misma pagina -->
+                    <p><a href="#" class="text-white text-decoration-none">No nos hacemos responsables</a></p>
+                    <p><a href="#" class="text-white text-decoration-none">de los daños producidos en su vista</a></p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Otros</h5>
-                    <p class="text-center">Otros 1</p>
-                    <p class="text-center">Otros 2</p>
+                    <!-- href vacíos, devuelven arriba a la misma pagina -->
+                    <p class="text-center"><a href="#" class="text-white text-decoration-none">Sugerencias</a></p>
+                    <p class="text-center"><a href="#" class="text-white text-decoration-none">Click vacío</a></p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-center text-uppercase mb-4 font-weight-bold">Contactar</h5>
-                    <p class="text-center">Tlf. ficticio</p>
-                    <p class="text-center">Email ficticio</p>
+                    <p class="text-center">Tlf: 91 123 45 67</p>
+                    <p class="text-center">Email: nomeenvies@nada.com</p>
                 </div>
             </div>
         </div>

@@ -1,9 +1,14 @@
+/* Prompts IA (Gemini)
+1- Este es mi archivo de estilos, ¿puedes hacerme una limpieza para evitar repetir código lo máximo posible? (adjunto styles.css)
+Respuesta: Archivo .css limpio (versión final utilizada)
+*/
+
 /* --- 1. VARIABLES Y GENERALES --- */
 :root {
     --color-fondo: #c9ada7;
     --verde-oferta: #3b7459;
     --azul-demanda: #405ca7;
-    --gris-oscuro: #444444;
+    --rojo-oscuro: #4e0000;
     --violeta-principal: #8a7cff;
     --shadow-standard: 5px 5px 5px rgba(0,0,0,0.6);
     --font-titulos: 'Montserrat', sans-serif;
@@ -49,6 +54,10 @@ h1, h2, h3, h4, h5, .navbar-nav .nav-link, .fw-bold {
     border: 2px solid rgba(255, 255, 255, 0.5) !important;
 }
 
+.container-login{
+    min-height: 50vh;
+}
+
 /* --- 4. TARJETAS Y CONTADORES --- */
 /* Estilos comunes para todas las tarjetas y contadores */
 .counter-oferta, .counter-demanda, .counter-usuarios, 
@@ -60,7 +69,7 @@ h1, h2, h3, h4, h5, .navbar-nav .nav-link, .fw-bold {
 /* Colores específicos */
 .counter-oferta, .card-oferta { background-color: var(--verde-oferta); color: white; }
 .counter-demanda, .card-demanda { background-color: var(--azul-demanda); color: white; }
-.counter-usuarios { background-color: var(--gris-oscuro); color: white; }
+.counter-usuarios { background-color: var(--rojo-oscuro); color: white; }
 .card-mis-ofertas { background-color: rgba(236, 236, 236, 0.521); }
 
 /* Bordes y sombras para las tarjetas del Dashboard */
