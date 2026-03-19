@@ -1,6 +1,8 @@
 /* Prompts IA (Gemini)
+
 1- Este es mi archivo de estilos, ¿puedes hacerme una limpieza para evitar repetir código lo máximo posible? (adjunto styles.css)
 Respuesta: Archivo .css limpio (versión final utilizada)
+
 */
 
 /* --- 1. VARIABLES Y GENERALES --- */
@@ -64,6 +66,10 @@ h1, h2, h3, h4, h5, .navbar-nav .nav-link, .fw-bold {
 .card-oferta, .card-demanda, .card-mis-ofertas {
     transition: transform 0.2s ease, box-shadow 0.4s ease !important;
     border-radius: 20px;
+}
+
+.badge-anuncio{
+    font-size: 0.75rem;
 }
 
 /* Colores específicos */

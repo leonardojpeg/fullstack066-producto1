@@ -90,11 +90,11 @@ export const view = {
 
             const tarjetaHtml = `
                 <div class="col-md-6 col-lg-4">
-                    <div class="card card-mis-ofertas h-100 shadow-sm border-2 ${colorBorde}" style="border-radius: 20px;">
+                    <div class="card card-mis-ofertas h-100 shadow-sm border-2 ${colorBorde}">
                         <div class="card-body d-flex flex-column text-start">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h5 class="card-title fw-bold text-black mb-0">${anuncio.titulo}</h5>
-                                <span class="badge text-uppercase ${esOferta ? 'bg-success text-white' : 'bg-primary'} fw-bold" style="font-size: 0.75rem;">
+                                <span class="badge-anuncio badge text-uppercase ${esOferta ? 'bg-success text-white' : 'bg-primary'} fw-bold">
                                     ${textoTipo}
                                 </span>
                             </div>
@@ -103,7 +103,7 @@ export const view = {
                             <p class="card-text text-dark flex-grow-1">${anuncio.desc || 'Sin descripción.'}</p>
                             
                             <div class="d-flex justify-content-end mt-3 pt-3 border-top border-light">
-                                <button class="btn btn-danger btn-sm px-4 fw-bold shadow-sm" style="border-radius: 8px;" onclick="borrarAnuncio(${anuncio.id})">
+                                <button class="btn btn-danger btn-sm px-4 fw-bold shadow-sm" onclick="borrarAnuncio(${anuncio.id})">
                                     <i class="bi bi-trash"></i> Borrar
                                 </button>
                             </div>
