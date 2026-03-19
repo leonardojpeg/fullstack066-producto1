@@ -85,14 +85,14 @@ h1, h2, h3 {
 }
 
 .logo {
-    font-weight: 490;
+    font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 0.5px;
     color: #ffffff !important;
 }
 
 .logo-o {
-    color: #22c55e; /* verde moderno */
+    color: #22c55e;
 }
 
 .logo-icon {
@@ -101,6 +101,7 @@ h1, h2, h3 {
     background-color: #22c55e;
     border-radius: 50%;
     margin: 0 3px;
+    display: inline-block;
 }
 
 .navbar-custom {
@@ -120,4 +121,19 @@ h1, h2, h3 {
 
 main.container {
     margin-top: 1rem;
+}
+
+#mensaje-login {
+    min-height: 24px;
+    font-size: 0.95rem;
+}
+
+.mensaje-error {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.mensaje-ok {
+    color: #198754;
+    font-weight: 600;
 }
