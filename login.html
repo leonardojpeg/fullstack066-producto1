@@ -14,6 +14,7 @@ Prompt 4: "Qué elementos debe tener una página de login simple para un prototi
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - AgroJobs</title>
 
+    <link rel="icon" type="image/png" href="img/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -28,17 +29,17 @@ Prompt 4: "Qué elementos debe tener una página de login simple para un prototi
                 <span>Jobs</span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menuPrincipal">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="index.html">Dashboard</a>
-                    <a class="nav-link" href="ofertas.html">Ofertas</a>
-                    <a class="nav-link" href="usuarios.html">Usuarios</a>
-                    <a class="nav-link active" href="login.html">Login</a>
-                </div>
+                <div class="navbar-nav ms-auto align-items-lg-center" id="navbar-links">
+                <a class="nav-link" href="index.html">Dashboard</a>
+                <a class="nav-link" href="ofertas.html">Ofertas</a>
+                <a class="nav-link" href="usuarios.html">Usuarios</a>
+                <span id="zona-sesion" class="d-flex align-items-lg-center flex-column flex-lg-row"></span>
+                </div>  
             </div>
         </div>
     </nav>
@@ -109,7 +110,7 @@ Prompt 4: "Qué elementos debe tener una página de login simple para un prototi
                     <div class="card-body">
                         <h3 class="h5 fw-bold mb-3">Acceso sencillo</h3>
                         <p class="text-muted mb-0">
-                            Un formulario claro y directo para iniciar sesión sin distracciones.
+                            Puedes utilizar los usuarios descritos en <strong>datos.js</strong> para acceder. Ejemplo: laura@correo.com / contraseña: 1234
                         </p>
                     </div>
                 </article>
