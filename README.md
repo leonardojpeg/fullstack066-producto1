@@ -34,24 +34,38 @@ El objetivo es demostrar el uso de JavaScript en el frontend aplicando conceptos
 
 ## 🧠 Estructura del proyecto
 
-El proyecto sigue una arquitectura modular simple:
-
-proyecto1/js
-
-  
-├── datos.js → Datos simulados (usuarios, ofertas, demandas)
-
-├── login.js → Lógica de autenticación
-
-├── landing.js → Dashboard principal
-
-├── ofertas.js → CRUD de ofertas y demandas
-
-├── usuarios.js → CRUD de usuarios
-
 /css
-
 └── style.css → Estilos personalizados
+
+/docs
+├── mockup_index.jpg → Mockup pantalla dashboard
+├── mockup_login.jpg → Mockup pantalla login
+├── mockup_ofertas.jpg → Mockup pantalla ofertas
+├── mockup_usuarios.jpg → Mockup pantalla usuarios
+└── uml_mvc.jpeg → Diagrama UML del sistema
+
+/img
+├── android-chrome-192x192.png
+├── android-chrome-512x512.png
+├── apple-touch-icon.png
+├── favicon-16x16.png
+├── favicon-32x32.png
+└── favicon.ico → Iconos de la aplicación
+
+/js
+├── datos.js → Datos simulados (usuarios, ofertas, demandas)
+├── login.js → Lógica de autenticación
+├── landing.js → Dashboard principal
+├── ofertas.js → CRUD de ofertas y demandas
+└── usuarios.js → CRUD de usuarios
+
+Archivos HTML:
+├── index.html → Dashboard
+├── login.html → Página de login
+├── ofertas.html → Gestión de ofertas/demandas
+└── usuarios.html → Gestión de usuarios
+
+README.md → Documentación del proyecto
 
 ---
 
