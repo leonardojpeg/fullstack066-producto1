@@ -5,7 +5,7 @@ Aplicación web frontend desarrollada como prototipo de gestión de ofertas y de
 ## 🔗 Demo
 
 Disponible en CodeSandbox:  
-https://codesandbox.io/p/sandbox/github/leonardojpeg/fullstack066/tree/Leonardo-producto1
+https://codesandbox.io/p/sandbox/github/leonardojpeg/fullstack066-producto1/main
 
 ---
 
