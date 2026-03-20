@@ -36,8 +36,9 @@ El objetivo es demostrar el uso de JavaScript en el frontend aplicando conceptos
 
 El proyecto sigue una arquitectura modular simple:
 
+proyecto1/js
 
-/js
+  
 ├── datos.js → Datos simulados (usuarios, ofertas, demandas)
 
 ├── login.js → Lógica de autenticación
