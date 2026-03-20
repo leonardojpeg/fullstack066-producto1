@@ -13,6 +13,7 @@ const formularioUsuario = document.getElementById("form-usuario");
 const inputNombre = document.getElementById("nombre");
 const inputEmailUsuario = document.getElementById("email-usuario");
 const inputPasswordUsuario = document.getElementById("password-usuario");
+const inputRolUsuario = document.getElementById("rol-usuario");
 const mensajeUsuario = document.getElementById("mensaje-usuario");
 const contenedorUsuarios = document.getElementById("contenedor-usuarios");
 
@@ -82,7 +83,7 @@ function pintarUsuarios() {
                 <td>${usuario.id}</td>
                 <td>${usuario.nombre}</td>
                 <td>${usuario.email}</td>
-                <td>${usuario.rol ?? "Candidato"}</td>
+                <td>${usuario.rol}</td>
                 <td class="text-end">
                     <button type="button" class="btn btn-outline-danger btn-sm btn-eliminar-usuario" data-id="${usuario.id}">
                         Eliminar
@@ -123,8 +124,9 @@ function crearUsuario(evento) {
     const nombre = inputNombre.value.trim();
     const email = inputEmailUsuario.value.trim();
     const password = inputPasswordUsuario.value.trim();
+    const rol = inputRolUsuario.value.trim();
 
-    if (nombre === "" || email === "" || password === "") {
+    if (nombre === "" || email === "" || password === "" || rol === "") {
         mostrarMensaje("Debes rellenar todos los campos.", "error");
         return;
     }
@@ -141,7 +143,7 @@ function crearUsuario(evento) {
         nombre,
         email,
         password,
-        rol: "Candidato"
+        rol
     });
 
     if (formularioUsuario) {
