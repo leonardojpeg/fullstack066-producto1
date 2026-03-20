@@ -39,13 +39,18 @@ El proyecto sigue una arquitectura modular simple:
 
 /js
 ├── datos.js → Datos simulados (usuarios, ofertas, demandas)
-├── login.js → Lógica de autenticación
-├── landing.js → Dashboard principal
-├── ofertas.js → CRUD de ofertas y demandas
-├── usuarios.js → CRUD de usuarios
-/css
-└── style.css → Estilos personalizados
 
+├── login.js → Lógica de autenticación
+
+├── landing.js → Dashboard principal
+
+├── ofertas.js → CRUD de ofertas y demandas
+
+├── usuarios.js → CRUD de usuarios
+
+/css
+
+└── style.css → Estilos personalizados
 
 ---
 
